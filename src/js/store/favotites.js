@@ -35,7 +35,7 @@ class FavoritesUI {
       destination_name,
       departure_at,
       price,
-      transfres,
+      transfers,
       flight_number,
       ticket_id
     },
@@ -60,7 +60,7 @@ class FavoritesUI {
             <span class="ticket-price ml-auto">${currency}${price}</span>
           </div>
           <div class="ticket-additional-info">
-            <span class="ticket-transfers">Пересадок: ${transfres}</span>
+            <span class="ticket-transfers">Пересадок: ${transfers}</span>
             <span class="ticket-flight-number">
               Номер рейса: ${flight_number}
             </span>

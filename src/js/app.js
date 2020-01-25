@@ -59,9 +59,3 @@ document.addEventListener("DOMContentLoaded", e => {
   }
 });
 
-// *1 - создать отдельный метод для получения airlines
-// *2 - в init добавить получение airlines
-// *3 - serializeAirlines
-// *4 - serializeTickets и переделать serializeCities и createShortCities и getCityCodeByKey
-// *5 - новые методы getAirlineNameByCode, getAirlineLogoByCode, getCityNameByCode
-// *6 - TicketsUI
