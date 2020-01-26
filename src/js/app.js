@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", e => {
     if (e.target.classList.contains("add-favorite")) {
       const ticketId = e.target.closest("[data-ticket-id]").dataset.ticketId;
       favoritesUI.addFavoriteTickets(ticketId);
+      e.target.textContent = 'Ticket Added';
+      e.target.classList.remove('green');
+      e.target.classList.add('orange');
     }
   });
 
