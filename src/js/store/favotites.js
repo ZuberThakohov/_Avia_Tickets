@@ -89,22 +89,20 @@ class FavoritesUI {
     ).textContent = `${this.favoritesTicketsContainer.children.length} pcs`;
   }
 
-  changeStyleTicketBtn(id, container) {
+  changeStyleTicketBtn(id, container, type) {
     let ticketBtn = container
       .querySelector(`.ticket-cover[data-ticket-id="${id}"]`)
       .querySelector(".btn-small");
-    ticketBtn.textContent = "Ticket Added";
-    ticketBtn.classList.remove("green");
-    ticketBtn.classList.add("orange");
-  }
-
-  returnStyleTicketBtn(id, container) {
-    let ticketBtn = container
-      .querySelector(`.ticket-cover[data-ticket-id="${id}"]`)
-      .querySelector(".btn-small");
-    ticketBtn.textContent = "Add to favorites";
-    ticketBtn.classList.remove("orange");
-    ticketBtn.classList.add("green");
+    if (type === "added") {
+      ticketBtn.textContent = "Ticket Added";
+      ticketBtn.classList.remove("green");
+      ticketBtn.classList.add("orange");
+    }
+    if (type === "return") {
+      ticketBtn.textContent = "Add to favorites";
+      ticketBtn.classList.remove("orange");
+      ticketBtn.classList.add("green");
+    }
   }
 }
 

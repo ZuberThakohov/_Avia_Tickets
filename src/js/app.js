@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", e => {
       const ticketId = e.target.closest("[data-ticket-id]").dataset.ticketId;
       favoritesUI.addFavoriteTickets(ticketId);
 
-      favoritesUI.changeStyleTicketBtn(ticketId, ticketsContainer);
+      favoritesUI.changeStyleTicketBtn(ticketId, ticketsContainer,'added');
     }
   });
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", e => {
       const ticketId = ticketElement.dataset.ticketId;
       favoritesUI.removeTicket(ticketId, ticketElement);
 
-      favoritesUI.returnStyleTicketBtn(ticketId, ticketsContainer);
+      favoritesUI.changeStyleTicketBtn(ticketId, ticketsContainer,'return');
     }
   });
 
