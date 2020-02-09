@@ -18,7 +18,7 @@ class FavoritesUI {
     this.renderFavoriteTickets(this.favoriteTickets);
   }
 
-  renderFavoriteTickets(tickets) {   
+  renderFavoriteTickets(tickets) {
     let fragmet = "";
     const currencySymbol = this.getCurrencySymbol();
     tickets.forEach(item => {
@@ -26,7 +26,7 @@ class FavoritesUI {
     });
     this.favoritesTicketsContainer.innerHTML = "";
     this.favoritesTicketsContainer.insertAdjacentHTML("afterbegin", fragmet);
-   
+
     this.ticketsCounter();
   }
 
@@ -87,6 +87,24 @@ class FavoritesUI {
     document.querySelector(
       ".favorites-counter"
     ).textContent = `${this.favoritesTicketsContainer.children.length} pcs`;
+  }
+
+  changeStyleTicketBtn(id, container) {
+    let ticketBtn = container
+      .querySelector(`.ticket-cover[data-ticket-id="${id}"]`)
+      .querySelector(".btn-small");
+    ticketBtn.textContent = "Ticket Added";
+    ticketBtn.classList.remove("green");
+    ticketBtn.classList.add("orange");
+  }
+
+  returnStyleTicketBtn(id, container) {
+    let ticketBtn = container
+      .querySelector(`.ticket-cover[data-ticket-id="${id}"]`)
+      .querySelector(".btn-small");
+    ticketBtn.textContent = "Add to favorites";
+    ticketBtn.classList.remove("orange");
+    ticketBtn.classList.add("green");
   }
 }
 

@@ -22,9 +22,8 @@ document.addEventListener("DOMContentLoaded", e => {
     if (e.target.classList.contains("add-favorite")) {
       const ticketId = e.target.closest("[data-ticket-id]").dataset.ticketId;
       favoritesUI.addFavoriteTickets(ticketId);
-      e.target.textContent = 'Ticket Added';
-      e.target.classList.remove('green');
-      e.target.classList.add('orange');
+
+      favoritesUI.changeStyleTicketBtn(ticketId, ticketsContainer);
     }
   });
 
@@ -33,6 +32,8 @@ document.addEventListener("DOMContentLoaded", e => {
       const ticketElement = e.target.closest("[data-ticket-id]");
       const ticketId = ticketElement.dataset.ticketId;
       favoritesUI.removeTicket(ticketId, ticketElement);
+
+      favoritesUI.returnStyleTicketBtn(ticketId, ticketsContainer);
     }
   });
 
@@ -58,7 +59,5 @@ document.addEventListener("DOMContentLoaded", e => {
     });
 
     ticketsUI.renderTickets(locations.lastSearch);
-    console.log(locations.lastSearch);
   }
 });
-
